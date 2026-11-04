@@ -1,6 +1,6 @@
 import { hrefFor, navItems, type Page } from '../data/navigation'
-import { WHATSAPP_DISPLAY, whatsappLink } from '../data/site'
-import { Mark, WhatsAppIcon } from './ui'
+import { LINKEDIN_URL, WHATSAPP_DISPLAY, whatsappLink } from '../data/site'
+import { LinkedInIcon, Mark, WhatsAppIcon } from './ui'
 
 export function Footer({ navigate }: { navigate: (page: Page) => void }) {
   return (
@@ -15,12 +15,22 @@ export function Footer({ navigate }: { navigate: (page: Page) => void }) {
         </div>
         <div className="footer-note">
           <span>Let’s discuss your next move.</span>
-          <a
-            className="wa-inline"
-            href={whatsappLink('Hello Kenneth, I would like to discuss an advisory engagement.')}
-          >
-            <WhatsAppIcon /> {WHATSAPP_DISPLAY}
-          </a>
+          <div className="footer-socials">
+            <a
+              className="wa-inline"
+              href={whatsappLink('Hello Kenneth, I would like to discuss an advisory engagement.')}
+            >
+              <WhatsAppIcon /> {WHATSAPP_DISPLAY}
+            </a>
+            <a
+              className="wa-inline"
+              href={LINKEDIN_URL}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <LinkedInIcon /> Connect on LinkedIn
+            </a>
+          </div>
         </div>
       </div>
       <div className="footer-bottom">

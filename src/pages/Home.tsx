@@ -1,6 +1,7 @@
+import type { CSSProperties } from 'react'
 import type { Page } from '../data/navigation'
 import { cocoa, portrait, services, WHATSAPP_DISPLAY, whatsappLink } from '../data/site'
-import { Arrow, Eyebrow, WhatsAppIcon } from '../components/ui'
+import { Arrow, Eyebrow, FadeImg, WhatsAppIcon } from '../components/ui'
 
 export function Home({ navigate }: { navigate: (page: Page) => void }) {
   return (
@@ -14,10 +15,10 @@ export function Home({ navigate }: { navigate: (page: Page) => void }) {
             <em>sustainable growth.</em>
           </h1>
           <p className="hero-intro">
-            I am <strong>Mbiatem Egbe Kenneth</strong> — financial adviser, economist, banker,
-            negotiator, cross-border trade broker, insurance adviser, and counsellor to cocoa
-            cooperatives and Common Initiative Groups. I help you secure funding, manage risk, and
-            grow across borders.
+            I am <strong>Mbiatem Egbe Kenneth</strong> — an economist and banker with a
+            Professional Master’s in Banking, Money &amp; International Finance from IRIC, and
+            corporate-banking training at Standard Chartered. I help entrepreneurs, cooperatives,
+            and institutions secure funding, manage credit and trade risk, and grow across borders.
           </p>
           <div className="hero-actions">
             <a
@@ -40,8 +41,9 @@ export function Home({ navigate }: { navigate: (page: Page) => void }) {
           </div>
         </div>
         <div className="hero-visual">
-          <div className="hero-image-wrap">
-            <img src={portrait} alt="Mbiatem Egbe Kenneth, financial adviser" />
+          <div className="hero-portrait">
+            <span className="hero-portrait-orbit" aria-hidden="true" />
+            <FadeImg className="hero-photo fade" src={portrait} alt="Mbiatem Egbe Kenneth, financial adviser" />
           </div>
           <div className="hero-card">
             <span className="hero-card-label">Professional focus</span>
@@ -65,10 +67,12 @@ export function Home({ navigate }: { navigate: (page: Page) => void }) {
         </div>
         <div className="positioning-copy">
           <p>
-            From banking halls to cocoa farms and cross-border markets, I bridge finance and the
-            real economy — combining credit-risk expertise with field experience as a trade broker
-            and adviser to cocoa cooperatives. My role is simple: help you get financed, insured,
-            and connected to profitable markets, safely.
+            My work sits where financial analysis meets the real economy. I bring the rigour of
+            formal credit-risk research — my graduate thesis compared the credit risk of local and
+            foreign banks in Cameroon — together with practical experience in corporate banking,
+            institutional governance, and trade across the Cameroon–Nigeria–CEMAC corridor. The
+            goal is simple: financing that is bankable, protection that is adequate, and decisions
+            that hold up under scrutiny.
           </p>
           <button className="text-link" onClick={() => navigate('about')}>
             Discover my approach <Arrow diagonal />
@@ -77,21 +81,33 @@ export function Home({ navigate }: { navigate: (page: Page) => void }) {
       </section>
 
       <section className="expertise-section">
-        <div className="section-heading">
+        <div className="section-heading" data-reveal>
           <Eyebrow>Core expertise</Eyebrow>
           <h2>Advice built around the realities of business.</h2>
           <p>Six complementary areas of expertise. One clear standard of professional care.</p>
         </div>
         <div className="service-grid">
-          {services.map((service) => (
-            <article className="service-card" key={service.number}>
+          {services.map((service, index) => (
+            <a
+              className="service-card"
+              key={service.number}
+              href="#/services"
+              onClick={(event) => {
+                event.preventDefault()
+                navigate('services')
+              }}
+              aria-label={`Explore ${service.title} on the services page`}
+              data-reveal
+              style={{ '--reveal-delay': `${index * 90}ms` } as CSSProperties}
+            >
+              <FadeImg className="service-bg fade" src={service.image} alt="" />
               <div className="service-top">
                 <span>{service.number}</span>
                 <Arrow diagonal />
               </div>
               <h3>{service.title}</h3>
               <p>{service.description}</p>
-            </article>
+            </a>
           ))}
         </div>
         <button className="button outline centered" onClick={() => navigate('services')}>
@@ -101,7 +117,7 @@ export function Home({ navigate }: { navigate: (page: Page) => void }) {
 
       <section className="why-section">
         <div className="why-image">
-          <img src={cocoa} alt="Ripe cocoa pods growing on a tree" />
+          <FadeImg className="fade" src={cocoa} alt="Ripe cocoa pods growing on a tree" />
           <span>Finance that understands the field.</span>
         </div>
         <div className="why-copy">
@@ -110,23 +126,28 @@ export function Home({ navigate }: { navigate: (page: Page) => void }) {
           <div className="why-list">
             {[
               [
-                'Banker’s insider view',
-                'Decades of credit-committee thinking, applied to getting your file approved.',
+                'Bank-trained, not self-taught',
+                'Relationship-banking training at Standard Chartered, applied to how credit committees actually read your file.',
               ],
               [
-                'Agribusiness finance specialist',
-                'Deep focus on cocoa cooperatives, CIGs, and agricultural value chains.',
+                'Research-grade credit insight',
+                'Graduate research comparing the credit risk of local and foreign banks in Cameroon.',
               ],
               [
                 'Cross-border corridor expertise',
                 'Active brokering across the Cameroon–Nigeria–CEMAC trade corridor.',
               ],
               [
-                'Risk, insurance & finance in one',
-                'A single adviser connecting funding, protection, and market access.',
+                'Finance, protection & governance in one',
+                'A single adviser connecting funding, insurance, and compliance — including OHADA and CEMAC requirements.',
               ],
             ].map(([title, text], index) => (
-              <div className="why-item" key={title}>
+              <div
+                className="why-item"
+                key={title}
+                data-reveal
+                style={{ '--reveal-delay': `${index * 80}ms` } as CSSProperties}
+              >
                 <span>0{index + 1}</span>
                 <div>
                   <h3>{title}</h3>
@@ -138,7 +159,7 @@ export function Home({ navigate }: { navigate: (page: Page) => void }) {
         </div>
       </section>
 
-      <section className="cta-section">
+      <section className="cta-section" data-reveal>
         <Eyebrow>Start with a conversation</Eyebrow>
         <h2>
           In cocoa, cross-border trade, or need a bank credit?
@@ -146,8 +167,9 @@ export function Home({ navigate }: { navigate: (page: Page) => void }) {
           <em>Let’s make your project bankable.</em>
         </h2>
         <p>
-          Share your objectives, constraints, and questions. Together we will structure your
-          project so it is bankable, insurable, and profitable.
+          Tell me your objective — financing, insurance, a cooperative structure, or a difficult
+          debt file. You will leave the first conversation with a clear read on what is achievable,
+          what it will cost, and the next step that moves it forward.
         </p>
         <div className="cta-actions">
           <a

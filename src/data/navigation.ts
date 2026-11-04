@@ -11,3 +11,11 @@ export const navItems: { label: string; page: Page }[] = [
 export function hrefFor(page: Page) {
   return page === 'home' ? '#/' : `#/${page}`
 }
+
+export const pageTitles: Record<Page, string> = {
+  home: 'Mbiatem Egbe Kenneth — Financial Adviser in Cameroon | Finance, Trade & Agribusiness',
+  about: 'About Kenneth — Economist & Banker in Cameroon',
+  services: 'Services — Finance, Trade, Risk & Agribusiness Advisory',
+  pricing: 'Pricing & Fees — Advisory Services in Cameroon',
+  contact: 'Contact — Book a consultation with Kenneth',
+}

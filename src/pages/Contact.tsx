@@ -1,6 +1,6 @@
 import { FormEvent, useState } from 'react'
-import { services, WHATSAPP_DISPLAY, whatsappLink } from '../data/site'
-import { Arrow, Eyebrow, WhatsAppIcon } from '../components/ui'
+import { EMAIL, LINKEDIN_URL, services, WHATSAPP_DISPLAY, whatsappLink } from '../data/site'
+import { Arrow, Eyebrow, LinkedInIcon, WhatsAppIcon } from '../components/ui'
 
 export function Contact() {
   const [sent, setSent] = useState(false)
@@ -49,6 +49,29 @@ export function Contact() {
               <span>Areas served</span>
               <strong>Cameroon &amp; cross-border</strong>
               <small>Remote and in-person engagements</small>
+            </div>
+            <div>
+              <span>Email</span>
+              <strong>
+                <a href={`mailto:${EMAIL}`} className="plain-link">
+                  {EMAIL}
+                </a>
+              </strong>
+              <small>For documents and formal enquiries</small>
+            </div>
+            <div>
+              <span>LinkedIn</span>
+              <strong>
+                <a
+                  href={LINKEDIN_URL}
+                  className="plain-link"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Mbiatem Egbe Kenneth
+                </a>
+              </strong>
+              <small>Professional background and experience</small>
             </div>
           </div>
         </div>

@@ -1,53 +1,61 @@
 export const WHATSAPP_NUMBER = '237651302996'
 export const WHATSAPP_DISPLAY = '+237 6 51 30 29 96'
+export const EMAIL = 'mbiatemkenneth@gmail.com'
+export const LINKEDIN_URL = 'https://www.linkedin.com/in/mbiatem-kenneth-0250781a8'
 
 export const whatsappLink = (text?: string) =>
   `https://wa.me/${WHATSAPP_NUMBER}${text ? `?text=${encodeURIComponent(text)}` : ''}`
 
-export const portrait = '/images/kenneth.png'
+export const portrait = '/images/kenneth.jpg'
 export const cocoa = '/images/cocoa.jpg'
 
 export const services = [
   {
     number: '01',
     title: 'Financial Advisory & Credit Risk Analysis',
+    image: '/images/expertise/advisory.jpg',
     description:
-      'Bankable business plans, loan file preparation, risk assessment, and credit approval strategy.',
+      'Bank-ready business plans, loan files, and credit-risk assessments grounded in graduate research on how Cameroonian banks actually make lending decisions.',
     items: ['Business plans', 'Loan file preparation', 'Credit risk reviews'],
   },
   {
     number: '02',
     title: 'Negotiation & Cross-Border Trade Brokerage',
+    image: '/images/expertise/trade.jpg',
     description:
-      'Expert brokering and negotiation for cross-border trade across the Cameroon–Nigeria–CEMAC corridor: securing deals, managing payment risk, and facilitating import-export transactions.',
+      'Brokering and negotiation across the Cameroon–Nigeria–CEMAC corridor — structuring deals, managing payment and compliance risk, and supporting import-export operations from first contact to settlement.',
     items: ['Deal facilitation', 'Payment risk management', 'Import-export support'],
   },
   {
     number: '03',
     title: 'Insurance Advisory',
+    image: '/images/expertise/insurance.jpg',
     description:
-      'Guidance on credit insurance, trade insurance, agricultural insurance, and business risk cover to protect your investments.',
+      'Independent guidance on credit, trade, agricultural, and business-risk cover — with insurer-side training behind a careful reading of what each policy actually promises.',
     items: ['Credit & trade insurance', 'Agricultural cover', 'Business risk cover'],
   },
   {
     number: '04',
     title: 'Cocoa Cooperatives & CIG Advisory',
+    image: '/images/expertise/cocoa-coop.jpg',
     description:
-      'Specialised support for cocoa cooperatives and Common Initiative Groups: structuring, financing, governance, market access, and price negotiation.',
+      'Specialised support for cocoa cooperatives and Common Initiative Groups — governance, structuring, financing, market access, and price negotiation that hold up with lenders and buyers.',
     items: ['Structuring & governance', 'Finance access', 'Price negotiation'],
   },
   {
     number: '05',
     title: 'Banking & Economic Consulting',
+    image: '/images/expertise/banking.jpg',
     description:
-      'Consulting for banks, MFIs, and SMEs on regulatory compliance (OHADA, CEMAC, Cameroonian finance law), portfolio quality, and economic intelligence.',
+      'Advisory for banks, MFIs, and SMEs on OHADA, CEMAC, and Cameroonian finance law, portfolio quality, and digital-risk awareness — built on years inside a national ICT institution.',
     items: ['OHADA / CEMAC compliance', 'Portfolio review', 'Economic analysis'],
   },
   {
     number: '06',
     title: 'Debt Restructuring & Recovery',
+    image: '/images/expertise/debt.jpg',
     description:
-      'Constructive negotiation with financial institutions for loan restructuring and sustainable debt management, for creditors and borrowers alike.',
+      'Constructive negotiation with financial institutions for loan restructuring and sustainable repayment plans — protecting relationships and recovery value for creditors and borrowers alike.',
     items: ['Debt assessment', 'Restructuring negotiation', 'Recovery strategy'],
   },
 ]

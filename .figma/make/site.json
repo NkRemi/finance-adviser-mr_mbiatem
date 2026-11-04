@@ -1,11 +1,11 @@
 {
-  "title": "Mbiatem Egbe Kenneth | Financial & Trade Adviser",
-  "description": "Explore financial, trade, insurance, and agribusiness advisory services, pricing, and consultation options from Mbiatem Egbe Kenneth.",
+  "title": "Mbiatem Egbe Kenneth — Financial Adviser in Cameroon",
+  "description": "Economist and banker in Cameroon with a Professional Master's in Banking from IRIC and corporate-banking training at Standard Chartered. Credit risk, cross-border trade, insurance, cocoa cooperative, and debt advisory.",
   "robots": {
-    "index": false
+    "index": true
   },
   "accessibility": {
-    "addBypassLinks": true,
+    "addBypassLinks": false,
     "ignoreReducedMotion": false
   }
 }

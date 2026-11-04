@@ -1,7 +1,8 @@
+import type { Page } from '../data/navigation'
 import { services, whatsappLink } from '../data/site'
 import { Arrow, Eyebrow, PageHero, WhatsAppIcon } from '../components/ui'
 
-export function Services() {
+export function Services({ navigate }: { navigate: (page: Page) => void }) {
   return (
     <>
       <PageHero
@@ -33,18 +34,27 @@ export function Services() {
         ))}
       </section>
       <section className="cta-section compact">
-        <Eyebrow>Not sure where to begin?</Eyebrow>
+        <Eyebrow>Seen what fits?</Eyebrow>
         <h2>
-          Start with the challenge.
+          Compare the investment.
           <br />
-          <em>We’ll define the right engagement.</em>
+          <em>Every fee is published.</em>
         </h2>
-        <a
-          className="button primary"
-          href={whatsappLink('Hello Kenneth, I am not sure which service fits my situation.')}
-        >
-          <WhatsAppIcon /> Discuss your needs
-        </a>
+        <p>
+          Fees are stated upfront for consultations, project work, and field missions — so you can
+          estimate the next step before you call.
+        </p>
+        <div className="cta-actions">
+          <button className="button primary" onClick={() => navigate('pricing')}>
+            View pricing <Arrow />
+          </button>
+          <a
+            className="button quiet"
+            href={whatsappLink('Hello Kenneth, I am not sure which service fits my situation.')}
+          >
+            <WhatsAppIcon /> Discuss your needs
+          </a>
+        </div>
       </section>
     </>
   )
