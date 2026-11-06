@@ -2,8 +2,10 @@ import type { CSSProperties } from 'react'
 import type { Page } from '../data/navigation'
 import { cocoa, portrait, services, WHATSAPP_DISPLAY, whatsappLink } from '../data/site'
 import { Arrow, FadeImg, WhatsAppIcon } from '../components/ui'
+import { useBooking } from '../components/Booking'
 
 export function Home({ navigate }: { navigate: (page: Page) => void }) {
+  const book = useBooking()
   return (
     <>
       <section className="hero">
@@ -21,12 +23,9 @@ export function Home({ navigate }: { navigate: (page: Page) => void }) {
             credit and trade risk, and grow across borders.
           </p>
           <div className="hero-actions">
-            <a
-              className="button gold"
-              href={whatsappLink('Hello Kenneth, I would like to book a consultation.')}
-            >
-              <WhatsAppIcon /> Book a consultation
-            </a>
+            <button type="button" className="button gold" onClick={book}>
+              Book a consultation <Arrow />
+            </button>
             <button className="button quiet" onClick={() => navigate('services')}>
               Explore services <Arrow diagonal />
             </button>

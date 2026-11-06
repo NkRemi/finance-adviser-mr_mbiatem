@@ -1,9 +1,11 @@
 import type { CSSProperties } from 'react'
 import type { Page } from '../data/navigation'
-import { LINKEDIN_URL, portrait, whatsappLink } from '../data/site'
+import { LINKEDIN_URL, portrait } from '../data/site'
 import { Arrow, FadeImg, LinkedInIcon, PageHero } from '../components/ui'
+import { useBooking } from '../components/Booking'
 
 export function About({ navigate }: { navigate: (page: Page) => void }) {
+  const book = useBooking()
   return (
     <>
       <PageHero
@@ -125,12 +127,9 @@ export function About({ navigate }: { navigate: (page: Page) => void }) {
       </section>
       <section className="inline-cta">
         <h2>Bring a clearer perspective to your next decision.</h2>
-        <a
-          className="button gold"
-          href={whatsappLink('Hello Kenneth, I would like to book a consultation.')}
-        >
+        <button type="button" className="button gold" onClick={book}>
           Book a consultation <Arrow />
-        </a>
+        </button>
       </section>
     </>
   )

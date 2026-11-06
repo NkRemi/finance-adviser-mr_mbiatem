@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Header } from './components/Header'
 import { Footer } from './components/Footer'
+import { BookingProvider } from './components/Booking'
 import { navItems, pageTitles, type Page } from './data/navigation'
 import { Home } from './pages/Home'
 import { About } from './pages/About'
@@ -55,26 +56,28 @@ export default function App() {
   }
 
   return (
-    <div className="app-shell">
-      <a
-        className="skip-link"
-        href="#main"
-        onClick={(event) => {
-          event.preventDefault()
-          document.getElementById('main')?.focus()
-        }}
-      >
-        Skip to content
-      </a>
-      <Header page={page} navigate={navigate} />
-      <main id="main" tabIndex={-1} key={page} className="page-enter">
-        {page === 'home' && <Home navigate={navigate} />}
-        {page === 'about' && <About navigate={navigate} />}
-        {page === 'services' && <Services navigate={navigate} />}
-        {page === 'pricing' && <Pricing navigate={navigate} />}
-        {page === 'contact' && <Contact />}
-      </main>
-      <Footer navigate={navigate} />
-    </div>
+    <BookingProvider>
+      <div className="app-shell">
+        <a
+          className="skip-link"
+          href="#main"
+          onClick={(event) => {
+            event.preventDefault()
+            document.getElementById('main')?.focus()
+          }}
+        >
+          Skip to content
+        </a>
+        <Header page={page} navigate={navigate} />
+        <main id="main" tabIndex={-1} key={page} className="page-enter">
+          {page === 'home' && <Home navigate={navigate} />}
+          {page === 'about' && <About navigate={navigate} />}
+          {page === 'services' && <Services navigate={navigate} />}
+          {page === 'pricing' && <Pricing navigate={navigate} />}
+          {page === 'contact' && <Contact />}
+        </main>
+        <Footer navigate={navigate} />
+      </div>
+    </BookingProvider>
   )
 }

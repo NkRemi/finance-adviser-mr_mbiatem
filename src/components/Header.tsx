@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react'
 import { hrefFor, navItems, type Page } from '../data/navigation'
-import { whatsappLink } from '../data/site'
 import { Arrow, Mark } from './ui'
+import { useBooking } from './Booking'
 
 export function Header({ page, navigate }: { page: Page; navigate: (page: Page) => void }) {
   const [open, setOpen] = useState(false)
+  const book = useBooking()
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -49,12 +50,9 @@ export function Header({ page, navigate }: { page: Page; navigate: (page: Page) 
             </a>
           ))}
         </nav>
-        <a
-          className="header-cta"
-          href={whatsappLink('Hello Kenneth, I would like to book a consultation.')}
-        >
+        <button type="button" className="header-cta" onClick={book}>
           Book a consultation <Arrow />
-        </a>
+        </button>
         <button
           className={open ? 'menu-button open' : 'menu-button'}
           onClick={() => setOpen(!open)}
