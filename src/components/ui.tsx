@@ -1,4 +1,4 @@
-import { useState, type CSSProperties, type ReactNode } from 'react'
+import { useState, type CSSProperties } from 'react'
 
 export function FadeImg({
   src,
@@ -60,24 +60,17 @@ export function Mark() {
   )
 }
 
-export function Eyebrow({ children, light = false }: { children: ReactNode; light?: boolean }) {
-  return <div className={light ? 'eyebrow light' : 'eyebrow'}>{children}</div>
-}
-
 export function PageHero({
-  eyebrow,
   title,
   italic,
   intro,
 }: {
-  eyebrow: string
   title: string
   italic: string
   intro: string
 }) {
   return (
     <section className="page-hero">
-      <Eyebrow light>{eyebrow}</Eyebrow>
       <h1>
         {title}
         <br />

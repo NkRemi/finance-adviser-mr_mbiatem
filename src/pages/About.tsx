@@ -1,44 +1,41 @@
 import type { CSSProperties } from 'react'
 import type { Page } from '../data/navigation'
 import { LINKEDIN_URL, portrait, whatsappLink } from '../data/site'
-import { Arrow, Eyebrow, FadeImg, LinkedInIcon, PageHero } from '../components/ui'
+import { Arrow, FadeImg, LinkedInIcon, PageHero } from '../components/ui'
 
 export function About({ navigate }: { navigate: (page: Page) => void }) {
   return (
     <>
       <PageHero
-        eyebrow="About Kenneth"
         title="Experience across sectors."
         italic="Clarity across decisions."
-        intro="Economist and banker with a Professional Master’s in Banking, Money & International Finance from IRIC and corporate-banking training at Standard Chartered Bank Cameroon."
+        intro="Economist and banker with a Professional Master’s in Banking, Money & International Finance from IRIC and hands-on corporate-banking experience across credit, trade finance, cooperative finance, and compliance."
       />
       <section className="about-story">
         <div className="about-image">
           <FadeImg className="fade" src={portrait} alt="Mbiatem Egbe Kenneth, financial adviser" />
         </div>
         <div className="about-copy">
-          <Eyebrow>A broad professional perspective</Eyebrow>
           <h2>Bridging strategy and execution.</h2>
           <p className="lead">
             Mbiatem Egbe Kenneth works where financial judgement, commercial opportunity, and
             institutional realities meet.
           </p>
           <p>
-            He trained as an economist at the University of Yaoundé II before specialising in
-            banking, money, and international finance at IRIC. His professional grounding came from
-            corporate banking at Standard Chartered Bank Cameroon, where he trained in relationship
-            management, credit structuring, trade and receivable finance, and compliance.
+            He trained as an economist before specialising in banking, money, and international
+            finance. His professional grounding came from corporate banking, with formal training in
+            relationship management, credit structuring, trade and receivable finance, and
+            compliance.
           </p>
           <p>
-            That foundation is analytical as well as practical. His graduate research compared the
-            credit risk of local and foreign commercial banks in Cameroon — the same discipline he
-            applies today to loan files, portfolio reviews, and credit decisions.
+            That foundation is analytical as well as practical. His graduate research examined credit
+            risk in commercial banking — the same discipline he applies today to loan files,
+            portfolio reviews, and credit decisions.
           </p>
           <p>
-            Alongside banking, he spent more than a decade in institutional administration at the
-            National Agency for Information and Communication Technologies (ANTIC), leading records
-            and governance functions and presenting on e-commerce and cybercrime risks to financial
-            institutions at national and international forums.
+            He also brings more than a decade of institutional experience in governance and
+            digital-economy policy, including presenting on e-commerce and cybercrime risks to
+            financial institutions at international forums.
           </p>
           <p>
             Whether structuring a loan file, evaluating credit risk, facilitating a cross-border
@@ -52,7 +49,7 @@ export function About({ navigate }: { navigate: (page: Page) => void }) {
       </section>
       <section className="credentials">
         <div className="credential-col" data-reveal>
-          <Eyebrow>Education</Eyebrow>
+          <h2 className="column-label">Education</h2>
           <ul>
             <li>
               <strong>Professional Master’s in Banking, Money &amp; International Finance</strong>
@@ -69,11 +66,11 @@ export function About({ navigate }: { navigate: (page: Page) => void }) {
           </ul>
         </div>
         <div className="credential-col" data-reveal style={{ '--reveal-delay': '90ms' } as CSSProperties}>
-          <Eyebrow>Professional training</Eyebrow>
+          <h2 className="column-label">Professional training</h2>
           <ul>
             <li>
               <strong>Relationship Account Manager programme</strong>
-              <span>Standard Chartered Bank Cameroon, 2010–2012</span>
+              <span>Corporate banking programme, 2010–2012</span>
             </li>
             <li>
               <strong>CFA Level I candidate</strong>
@@ -81,12 +78,12 @@ export function About({ navigate }: { navigate: (page: Page) => void }) {
             </li>
             <li>
               <strong>Commercial insurance agent training</strong>
-              <span>Alpha Insurance, 2009</span>
+              <span>2009</span>
             </li>
           </ul>
         </div>
         <div className="credential-col" data-reveal style={{ '--reveal-delay': '180ms' } as CSSProperties}>
-          <Eyebrow>Research &amp; forums</Eyebrow>
+          <h2 className="column-label">Research &amp; forums</h2>
           <ul>
             <li>
               <strong>
@@ -107,20 +104,19 @@ export function About({ navigate }: { navigate: (page: Page) => void }) {
         </div>
       </section>
       <section className="values">
-        <Eyebrow>Working principles</Eyebrow>
+        <h2 className="values-title">Working principles</h2>
         <div className="values-grid">
           {[
-            ['01', 'Clarity', 'Plain language, disciplined analysis, and clear recommendations.'],
-            ['02', 'Integrity', 'Advice grounded in professional judgement and long-term trust.'],
-            ['03', 'Practicality', 'Solutions shaped for real operating and market conditions.'],
-            ['04', 'Perspective', 'A connected view across disciplines, stakeholders, and borders.'],
-          ].map(([number, title, text], index) => (
+            ['Clarity', 'Plain language, disciplined analysis, and clear recommendations.'],
+            ['Integrity', 'Advice grounded in professional judgement and long-term trust.'],
+            ['Practicality', 'Solutions shaped for real operating and market conditions.'],
+            ['Perspective', 'A connected view across disciplines, stakeholders, and borders.'],
+          ].map(([title, text], index) => (
             <article
-              key={number}
+              key={title}
               data-reveal
-              style={{ '--reveal-delay': `${index * 90}ms` } as CSSProperties}
+              style={{ '--reveal-delay': `${index * 80}ms` } as CSSProperties}
             >
-              <span>{number}</span>
               <h3>{title}</h3>
               <p>{text}</p>
             </article>
@@ -128,10 +124,7 @@ export function About({ navigate }: { navigate: (page: Page) => void }) {
         </div>
       </section>
       <section className="inline-cta">
-        <div>
-          <Eyebrow light>Work together</Eyebrow>
-          <h2>Bring a clearer perspective to your next decision.</h2>
-        </div>
+        <h2>Bring a clearer perspective to your next decision.</h2>
         <a
           className="button gold"
           href={whatsappLink('Hello Kenneth, I would like to book a consultation.')}

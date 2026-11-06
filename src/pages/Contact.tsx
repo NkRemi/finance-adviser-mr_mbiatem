@@ -1,6 +1,6 @@
 import { FormEvent, useState } from 'react'
 import { EMAIL, LINKEDIN_URL, services, WHATSAPP_DISPLAY, whatsappLink } from '../data/site'
-import { Arrow, Eyebrow, LinkedInIcon, WhatsAppIcon } from '../components/ui'
+import { Arrow, LinkedInIcon, WhatsAppIcon } from '../components/ui'
 
 export function Contact() {
   const [sent, setSent] = useState(false)
@@ -25,7 +25,6 @@ export function Contact() {
     <>
       <section className="contact-page">
         <div className="contact-intro">
-          <Eyebrow light>Contact</Eyebrow>
           <h1>
             Let’s move the
             <br />
@@ -94,7 +93,6 @@ export function Contact() {
           ) : (
             <form onSubmit={submit}>
               <div className="form-heading">
-                <span>Consultation enquiry</span>
                 <h2>How can Kenneth help?</h2>
               </div>
               <div className="field-row">

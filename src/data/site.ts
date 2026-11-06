@@ -20,34 +20,34 @@ export const services = [
   },
   {
     number: '02',
-    title: 'Negotiation & Cross-Border Trade Brokerage',
+    title: 'Trade Finance & Cross-Border Trade',
     image: '/images/expertise/trade.jpg',
     description:
-      'Brokering and negotiation across the Cameroon–Nigeria–CEMAC corridor — structuring deals, managing payment and compliance risk, and supporting import-export operations from first contact to settlement.',
-    items: ['Deal facilitation', 'Payment risk management', 'Import-export support'],
+      'Trade finance and cross-border structuring across the Cameroon–Nigeria–CEMAC corridor — letters of credit, guarantees, documentary collections, and export pre-financing, with payment and compliance risk managed from first contact to settlement.',
+    items: ['Trade finance structuring', 'Payment risk management', 'Import-export support'],
   },
   {
     number: '03',
     title: 'Insurance Advisory',
     image: '/images/expertise/insurance.jpg',
     description:
-      'Independent guidance on credit, trade, agricultural, and business-risk cover — with insurer-side training behind a careful reading of what each policy actually promises.',
+      'Independent guidance on credit, trade, agricultural, and business-risk cover, with insurer-side training behind a careful reading of what each policy actually promises.',
     items: ['Credit & trade insurance', 'Agricultural cover', 'Business risk cover'],
   },
   {
     number: '04',
-    title: 'Cocoa Cooperatives & CIG Advisory',
+    title: 'Cooperative Finance & CIG Advisory',
     image: '/images/expertise/cocoa-coop.jpg',
     description:
-      'Specialised support for cocoa cooperatives and Common Initiative Groups — governance, structuring, financing, market access, and price negotiation that hold up with lenders and buyers.',
-    items: ['Structuring & governance', 'Finance access', 'Price negotiation'],
+      'Cooperative finance and governance support for cocoa cooperatives and Common Initiative Groups — internal structuring, working-capital and credit needs, market access, and price negotiation that hold up with lenders and buyers.',
+    items: ['Cooperative finance', 'Structuring & governance', 'Price negotiation'],
   },
   {
     number: '05',
     title: 'Banking & Economic Consulting',
     image: '/images/expertise/banking.jpg',
     description:
-      'Advisory for banks, MFIs, and SMEs on OHADA, CEMAC, and Cameroonian finance law, portfolio quality, and digital-risk awareness — built on years inside a national ICT institution.',
+      'Advisory for banks, MFIs, and SMEs on OHADA, CEMAC, and Cameroonian finance law, portfolio quality, and digital-risk awareness, built on years inside a national ICT institution.',
     items: ['OHADA / CEMAC compliance', 'Portfolio review', 'Economic analysis'],
   },
   {
@@ -55,7 +55,7 @@ export const services = [
     title: 'Debt Restructuring & Recovery',
     image: '/images/expertise/debt.jpg',
     description:
-      'Constructive negotiation with financial institutions for loan restructuring and sustainable repayment plans — protecting relationships and recovery value for creditors and borrowers alike.',
+      'Constructive negotiation with financial institutions for loan restructuring and sustainable repayment plans, protecting relationships and recovery value for creditors and borrowers alike.',
     items: ['Debt assessment', 'Restructuring negotiation', 'Recovery strategy'],
   },
 ]
